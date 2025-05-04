@@ -21,7 +21,7 @@ function App() {
 
   const [filter, setFilter] = useState('');
 
-  const normalize = str => str.replace(/\D/g, '');
+  const normalize = str => str.replace(/[-*/.,!?;:()]/g, '');
   const isNumeric = Number.isFinite(Number(normalize(filter)));
   const filteredContacts = contacts.filter(
     contact =>
